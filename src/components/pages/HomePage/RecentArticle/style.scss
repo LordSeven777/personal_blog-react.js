@@ -1,0 +1,126 @@
+@import "../../../../sass/variables";
+@import "../../../../sass/mixins";
+
+.recent-articles .article {
+	margin-bottom: 10px;
+	transition: 0.4s;
+
+	a {
+		width: 100%;
+		display: grid;
+		grid-template-areas: "recentArticleImg recentArticleContent";
+		grid-template-columns: 35% auto;
+		grid-gap: 10px;
+
+		img {
+			grid-area: recentArticleImg;
+			height: 80px;
+			width: 100%;
+			object-fit: cover;
+		}
+
+		.content {
+			grid-area: recentArticleContent;
+
+			h4 {
+				color: $black;
+				font-size: 14px;
+				max-height: 38px;
+				overflow: hidden;
+			}
+
+			em {
+				color: $dark;
+				font-size: 12px;
+				font-weight: 600;
+				font-style: normal;
+			}
+
+			p {
+				overflow: hidden;
+				max-width: 100%;
+				max-height: 20px;
+				text-overflow: ellipsis;
+
+				strong {
+					white-space: wrap;
+					color: $secondary-color;
+					font-size: 11px;
+					font-weight: normal;
+				}
+			}
+		}
+	}
+
+	&:hover {
+		a .content h4 {
+			text-decoration: underline;
+			transition: 0.4s;
+		}
+	}
+}
+
+@include mq(450px) {
+	.recent-articles .article {
+		margin-bottom: 15px;
+
+		a {
+			img {
+				height: 100px;
+			}
+
+			.content {
+				h4 {
+					font-size: 16px;
+					max-height: 44px;
+					margin-bottom: 0.3em;
+				}
+
+				em {
+					font-size: 13px;
+					margin-bottom: 0.7em;
+					display: block;
+				}
+
+				p {
+					max-height: 24px;
+
+					strong {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include mq(768px) {
+	.recent-articles .article {
+		a {
+			grid-template-columns: 180px auto;
+
+			img {
+				height: 120px;
+			}
+
+			.content {
+				h4 {
+					font-size: 18px;
+					max-height: 58px;
+				}
+
+				em {
+					font-size: 15px;
+				}
+
+				p {
+					max-height: 32px;
+
+					strong {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,105 @@
+@import "../../../../sass/variables";
+@import "../../../../sass/mixins";
+
+.recent-articles .top-recent {
+	grid-area: topArticle;
+	width: 100%;
+	height: 240px;
+	position: relative;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: 0.5s;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	a {
+		width: 100%;
+		height: 100%;
+		padding: 0.7em;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-image: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.3),
+			rgba(0, 0, 0, 0.7)
+		);
+		color: #fff;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+
+		h3 {
+			font-size: 17px;
+			max-height: 44px;
+			overflow: hidden;
+			margin-bottom: 0.5em;
+		}
+
+		em {
+			font-size: 14px;
+			font-style: normal;
+			margin-bottom: 0.7em;
+		}
+
+		strong {
+			font-size: 14px;
+			font-weight: 600;
+		}
+	}
+
+	a > * {
+		display: block;
+		text-shadow: $box-shadow;
+	}
+}
+
+.recent-articles .top-recent:hover {
+	img {
+		transform: scale(1.1, 1.1);
+		transition: 0.5s;
+	}
+}
+
+@include mq(576px) {
+	.recent-articles .top-recent {
+		height: 300px;
+
+		a {
+			padding: 1em;
+
+			h3 {
+				font-size: 20px;
+				max-height: 50px;
+			}
+		}
+	}
+}
+
+@include mq(768px) {
+	.recent-articles .top-recent {
+		height: 360px;
+
+		a {
+			h3 {
+				font-size: 23px;
+				max-height: 62px;
+			}
+
+			em {
+				font-size: 15px;
+			}
+
+			strong {
+				font-size: 15px;
+			}
+		}
+	}
+}

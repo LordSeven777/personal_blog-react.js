@@ -1,0 +1,71 @@
+@import "../../../sass/variables";
+@import "../../../sass/mixins";
+
+footer {
+	background-color: $dark;
+	padding: 2em 0;
+	color: #fff;
+	text-align: center;
+
+	.main {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.logo {
+			font-family: "Segoe Script";
+			text-shadow: $box-shadow;
+			font-size: 20px;
+			margin-bottom: 0.6em;
+		}
+
+		nav ul {
+			list-style: none;
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 1em;
+
+			a {
+				color: #fff;
+				font-size: 14px;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		ul.contacts {
+			list-style-type: none;
+			display: flex;
+			justify-content: space-evenly;
+			margin-bottom: 1em;
+		}
+	}
+
+	.main > * {
+		width: 100%;
+	}
+}
+
+@include mq(576px) {
+	footer {
+		.main {
+			text-align: left;
+
+			nav ul {
+				flex-direction: column;
+				justify-content: start;
+			}
+
+			ul.contacts {
+				flex-direction: column;
+				justify-content: start;
+			}
+		}
+
+		.main > * {
+			width: fit-content;
+		}
+	}
+}

@@ -1,0 +1,94 @@
+@import "../../../../sass/variables";
+@import "../../../../sass/mixins";
+
+.newsletter {
+  text-align: center;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+
+  h2 {
+    margin-bottom: 0.4em;
+  }
+
+  p {
+    color: $dark;
+    font-size: 14px;
+    margin-bottom: 1.5em;
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .input {
+      position: relative;
+
+      svg {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0.75rem;
+        color: #999;
+      }
+
+      input {
+        padding: 0.5em;
+        padding-left: 40px;
+        border: 1px solid #dedede;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+
+        &:focus {
+          cursor: text;
+        }
+      }
+    }
+
+    button {
+      margin-left: 5px;
+      padding-right: 1em;
+      padding-left: 1em;
+      font-size: 15px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  }
+}
+
+@include mq(576px) {
+  .newsletter {
+    p {
+      font-size: 15px;
+    }
+
+    form {
+      .input {
+        input {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@include mq(992px) {
+  .newsletter {
+    p {
+      font-size: 16px;
+    }
+
+    form {
+      .input {
+        input {
+          font-size: 16px;
+        }
+      }
+
+      button {
+        font-size: 16px;
+      }
+    }
+  }
+}

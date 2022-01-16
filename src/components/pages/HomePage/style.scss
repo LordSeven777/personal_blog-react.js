@@ -1,0 +1,24 @@
+@import "../../../sass/variables";
+@import "../../../sass/mixins";
+
+h2 {
+	color: $dark;
+	font-size: 22px;
+	margin-bottom: 1.3em;
+}
+
+#accueil .container section {
+	padding: 3em 0;
+}
+
+@include mq(768px) {
+	h2 {
+		font-size: 26px;
+	}
+}
+
+@include mq(992px) {
+	h2 {
+		font-size: 30px;
+	}
+}

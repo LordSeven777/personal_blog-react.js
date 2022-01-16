@@ -1,0 +1,83 @@
+@import "../../../../sass/mixins";
+@import "../../../../sass/variables";
+
+#accueil .jumbotron {
+	height: calc(100vh - 70px);
+	@include bg-img;
+	position: relative;
+
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: transparentize($primary-color, 0.4);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		article {
+			text-align: center;
+			color: #fff;
+			padding: 0 1em;
+
+			h1 {
+				font-size: 32px;
+				text-shadow: $box-shadow;
+				margin-bottom: 0.5em;
+			}
+
+			p {
+				text-shadow: $box-shadow;
+				margin-bottom: 2em;
+			}
+
+			a {
+				border-radius: 5px;
+				color: #fff;
+				box-shadow: $box-shadow;
+			}
+		}
+	}
+}
+
+@include mq(610px) {
+	#accueil .jumbotron {
+		height: 450px;
+	}
+}
+
+@include mq(768px) {
+	#accueil .jumbotron {
+		height: 400px;
+
+		h1 {
+			font-size: 38px;
+		}
+
+		p {
+			font-size: 17px;
+		}
+	}
+}
+
+@include mq(992px) {
+	#accueil .jumbotron {
+		height: 350px;
+
+		.overlay {
+			article {
+				text-align: left;
+
+				h1 {
+					font-size: 42px;
+				}
+
+				p {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}

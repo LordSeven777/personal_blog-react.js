@@ -1,0 +1,13 @@
+// Media queries
+@mixin mq($min-width) {
+	@media screen and (min-width: $min-width) {
+		@content;
+	}
+}
+
+// Background-image
+@mixin bg-img($size: cover, $position: center, $repeat: no-repeat) {
+	background-repeat: $repeat;
+	background-position: $position;
+	background-size: $size;
+}
